@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Play Caro</title>
+</head>
+<body>
+<h1>Caro Game Simple</h1>
+<style>
+    body {padding-bottom: 50px}
+</style>
+<p id="output"></p>
+<input type="button" value="Change Value" onclick="changeValue()"/>
+<script>
+    var row = parseInt(prompt("Enter number of row: "));
+    var col = parseInt(prompt("Enter number of column: "));
+    var output =  "";
+    var defaultCaro = new Array(row);
+    for (var i = 0; i < row; i ++) {
+        defaultCaro[i] = new Array(col);
+        for (var j = 0; j < col; j ++) {
+            defaultCaro[i][j] = 0;
+            output += defaultCaro[i][j] + "&nbsp;&nbsp;"
+        }
+        output += "<br>";
+    }
+    document.getElementById("output").innerHTML = output;
+
+    function changeValue() {
+        var r = parseInt(prompt("Enter row of element wanna change: "));
+        var c = parseInt(prompt("Enter col of element wanna change: "));
+        defaultCaro[r][c] = "x";
+        output = "";
+        output += "<hr/>";
+        for(var i = 0; i < row; i ++){
+            for (var j = 0; j < col; j++) {
+                output += defaultCaro[i][j] + "&nbsp;&nbsp;";
+            }
+            output += "<br>";
+        }
+        document.getElementById("output").innerHTML = output;
+    }
+
+
+</script>
+</body>
+</html>
